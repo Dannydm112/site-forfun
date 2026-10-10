@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMX & Onyx | Cyberpunk Gaming Hub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-bg': '#05050a',
+                        'neon-cyan': '#00f3ff',
+                        'neon-pink': '#ff00ff',
+                        'dark-surface': '#101015'
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'rajdhani': ['Rajdhani', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #05050a;
+            color: #f0f0f0;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            overflow-x: hidden;
+        }
+
+        /* Neon Text Glow */
+        .neon-text-cyan {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00f3ff, 0 0 40px #00f3ff;
+        }
+        .neon-text-pink {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+        }
+
+        /* Glitch Effect (Hero Text) */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #05050a;
+        }
+        .glitch::before {
+            left: 3px;
+            text-shadow: -2px 0 #ff00ff;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+            z-index: -1;
+        }
+        .glitch::after {
+            left: -3px;
+            text-shadow: -2px 0 #00f3ff;
+            clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+            z-index: -2;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); }
+            20% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); }
+            40% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); }
+            60% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); }
+            80% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); }
+            100% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%); }
+            20% { clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%); }
+            40% { clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%); }
+            60% { clip-path: polygon(0 2%, 100% 2%, 100% 2%, 0 2%); }
+            80% { clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%); }
+            100% { clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%); }
+        }
+
+        /* Buttons */
+        .btn-cyber {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: transparent;
+            border: 2px solid;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            z-index: -1;
+            transform: skewX(-15deg);
+        }
+        .btn-cyber:hover::before { left: 0; }
+
+        .btn-cyan {
+            color: #fff;
+            border-color: #00f3ff;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3), inset 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+        .btn-pink {
+            color: #fff;
+            border-color: #ff00ff;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3), inset 0 0 10px rgba(255, 0, 255, 0.2);
+        }
+
+        /* Button Hover Glitch Effect */
+        .btn-cyber:hover {
+            animation: glitch-button 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .btn-cyan:hover { box-shadow: 0 0 20px #00f3ff, inset 0 0 15px #00f3ff; }
+        .btn-pink:hover { box-shadow: 0 0 20px #ff00ff, inset 0 0 15px #ff00ff; }
+
+        @keyframes glitch-button {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* CRT Screen Effect */
+        .crt-monitor {
+            position: relative;
+            background: #121010;
+            border: 4px solid #333;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 
+                0 0 20px rgba(0, 0, 0, 0.8), 
+                inset 0 0 40px rgba(0, 243, 255, 0.05),
+                0 0 0 10px #1a1a24;
+            overflow: hidden;
+        }
+        .crt-screen {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: inset 0 0 2rem rgba(0,0,0,1);
+        }
+        .crt-screen iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+            border: none;
+        }
+        /* Scanlines */
+        .crt-screen::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%
+            ), 
+            linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none; /* Crucial so we can click the video */
+        }
+        /* Flicker */
+        .crt-monitor::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: rgba(0, 243, 255, 0.02);
+            opacity: 0;
+            z-index: 3;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.02; }
+            50% { opacity: 0.05; }
+            100% { opacity: 0.02; }
+        }
+
+        /* Profile Cards (The Crew) */
+        .crew-card {
+            background: rgba(16, 16, 21, 0.8);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .crew-card:hover {
+            border-color: #00f3ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
+        }
+        .crew-card.pink-theme {
+            border-color: rgba(255, 0, 255, 0.2);
+        }
+        .crew-card.pink-theme:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-rajdhani antialiased">
+
+    <!-- Ambient Glows -->
+    <div class="fixed top-20 left-0 w-96 h-96 bg-neon-cyan opacity-10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed bottom-20 right-0 w-96 h-96 bg-neon-pink opacity-10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+    <!-- 1. HERO SECTION -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center text-center p-6 z-10">
+        <h2 class="text-neon-cyan font-orbitron tracking-[0.3em] mb-4 text-sm md:text-lg">BINE AI VENIT ÎN RETEA</h2>
+        <h1 class="font-orbitron text-5xl md:text-8xl font-black mb-6 uppercase glitch neon-text-pink" data-text="GEMX HUB">GEMX HUB</h1>
+        <p class="text-gray-400 text-lg md:text-2xl max-w-2xl mb-10">Conectează-te la sursă. Aici se adună elitele, pasionații de gaming și adevărata familie.</p>
+        
+        <a href="https://www.youtube.com/@Gemxgg" target="_blank" class="btn-cyber btn-pink text-lg py-4 px-8 rounded">
+            <svg class="w-6 h-6 mr-3 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            Abonează-te pe YouTube
+        </a>
+        
+        <div class="absolute bottom-10 animate-bounce">
+            <a href="#discord" class="text-gray-500 hover:text-neon-cyan transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. DISCORD (ONYX) SECTION -->
+    <section id="discord" class="relative py-24 z-10 border-y border-gray-800 bg-black/40 backdrop-blur-sm">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="font-orbitron text-4xl md:text-5xl mb-6 neon-text-cyan">Onyx Server</h2>
+            <p class="text-gray-300 text-xl mb-10 max-w-3xl mx-auto">Sistemul este online. Comunitatea te așteaptă. Alătură-te serverului Onyx și intră direct în acțiune.</p>
+            
+            <a href="https://discord.gg/5AAnMSeBV" target="_blank" class="btn-cyber btn-cyan text-lg py-4 px-10 rounded">
+                <svg class="w-6 h-6 mr-3 fill-current" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+                Conectare la Onyx
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. THE CREW SECTION -->
+    <section class="relative py-24 z-10">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="font-orbitron text-4xl md:text-5xl neon-text-pink mb-4">Familia</h2>
+                <p class="text-gray-400 text-xl uppercase tracking-widest">The Core Crew</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- GEMX (Founder) -->
+                <div class="crew-card rounded-xl p-8 text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 border-4 border-neon-cyan mb-6 overflow-hidden flex items-center justify-center">
+                        <span class="font-orbitron text-4xl font-bold text-gray-500">G</span>
+                    </div>
+                    <h3 class="font-orbitron text-2xl font-bold mb-2">GEMX</h3>
+                    <p class="text-neon-cyan uppercase tracking-widest text-sm mb-6">Founder</p>
+                    <a href="https://www.youtube.com/@Gemxgg" target="_blank" class="btn-cyber btn-cyan text-sm py-2 px-4 rounded w-full">
+                        Canal YouTube
+                    </a>
+                </div>
+
+                <!-- Clau (The Duo) -->
+                <div class="crew-card pink-theme rounded-xl p-8 text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 border-4 border-neon-pink mb-6 overflow-hidden flex items-center justify-center">
+                        <span class="font-orbitron text-4xl font-bold text-gray-500">C</span>
+                    </div>
+                    <h3 class="font-orbitron text-2xl font-bold mb-2">Clau</h3>
+                    <p class="text-neon-pink uppercase tracking-widest text-sm mb-6">The Duo (ChatGPT Pro)</p>
+                    <a href="https://www.youtube.com/@claumare3125" target="_blank" class="btn-cyber btn-pink text-sm py-2 px-4 rounded w-full">
+                        Canal YouTube
+                    </a>
+                </div>
+
+                <!-- Kyow (Onyx Host) -->
+                <div class="crew-card rounded-xl p-8 text-center">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gray-800 border-4 border-neon-cyan mb-6 overflow-hidden flex items-center justify-center">
+                        <span class="font-orbitron text-4xl font-bold text-gray-500">K</span>
+                    </div>
+                    <h3 class="font-orbitron text-2xl font-bold mb-2">Kyow</h3>
+                    <p class="text-neon-cyan uppercase tracking-widest text-sm mb-6">Onyx Host</p>
+                    <a href="https://www.youtube.com/@Kyow_blvck" target="_blank" class="btn-cyber btn-cyan text-sm py-2 px-4 rounded w-full">
+                        Canal YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. VIDEO ARCHIVE (CRT STYLE) -->
+    <section class="relative py-24 z-10 border-t border-gray-800 bg-[#08080c]">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-orbitron text-4xl md:text-5xl text-white mb-4" style="text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00f3ff;">Arhiva Video</h2>
+                <p class="text-gray-400 text-lg uppercase">Feed video direct de la sursă</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Video 1 -->
+                <div class="crt-monitor">
+                    <div class="flex justify-between items-center mb-4 px-2 border-b border-gray-800 pb-2">
+                        <span class="font-orbitron text-neon-cyan text-sm">CH_01 // GEMX_FEED</span>
+                        <span class="text-red-500 animate-pulse text-xs uppercase tracking-widest">REC ●</span>
+                    </div>
+                    <div class="crt-screen">
+                        <!-- INLOCUIESTE LINK-UL DE MAI JOS CU LINK-UL TAU DE YOUTUBE EMBED -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="crt-monitor">
+                    <div class="flex justify-between items-center mb-4 px-2 border-b border-gray-800 pb-2">
+                        <span class="font-orbitron text-neon-pink text-sm">CH_02 // HIGHLIGHTS</span>
+                        <span class="text-red-500 animate-pulse text-xs uppercase tracking-widest">REC ●</span>
+                    </div>
+                    <div class="crt-screen">
+                         <!-- INLOCUIESTE LINK-UL DE MAI JOS CU LINK-UL TAU DE YOUTUBE EMBED -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER -->
+    <footer class="border-t border-gray-800 bg-black py-10 z-10 relative">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-orbitron text-gray-500 text-sm tracking-widest uppercase mb-4">
+                © 2026 GEMX Hub. Toate drepturile rezervate.
+            </p>
+            <div class="flex justify-center gap-6">
+                <a href="https://discord.gg/5AAnMSeBV" target="_blank" class="text-gray-600 hover:text-neon-cyan transition-colors">Discord</a>
+                <a href="https://www.youtube.com/@Gemxgg" target="_blank" class="text-gray-600 hover:text-neon-pink transition-colors">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
