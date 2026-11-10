@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Priestacy';
+    src: url('Priestacy.otf');
+}
 /* Resetăm marginile ca să fie totul curat */
 * {
     margin: 0;
