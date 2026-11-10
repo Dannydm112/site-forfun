@@ -1,20 +1,20 @@
+/* Încărcăm fontul tău premium descărcat */
 @font-face {
     font-family: 'Priestacy';
     src: url('Priestacy.otf');
 }
-/* Resetăm marginile ca să fie totul curat */
+
+/* Resetăm marginile ca să fie curat */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Facem ecranul plin și punem textul perfect pe centru */
+/* Fundalul negru pur și așezarea perfectă pe centru */
 body, html {
     height: 100%;
-    /* Un negru foarte adânc cu o umbră subtilă de verde smarald întunecat */
-    background-color: #040d08; 
-    font-family: 'Priestacy', cursive;
+    background-color: #000000; /* Negru curat */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,24 +25,21 @@ body, html {
     text-align: center;
 }
 
+/* Magia textului: verde smarald, font custom și strălucire */
 .title {
-    /* Culoarea verde smarald (Emerald Green) */
-    color: ##4B0082; 
-    font-size: 5rem;
-    font-weight: 300; /* Font subțire pentru eleganță */
-    letter-spacing: 8px; /* Litere spațiate pentru vibe-ul de viitor */
-    text-transform: lowercase;
-    /* Îi dăm un glow fin de neon smarald în jur */
-    text-shadow: 0 0 25px rgba(80, 200, 120, 0.3);
-    /* O animație fină care face textul să apară ușor când intri pe site */
-    animation: fadeIn 2.5s ease-in-out;
+    color: #50C878; /* Verde smarald */
+    font-family: 'Priestacy', cursive; /* Folosim fontul tău */
+    font-size: 8rem; /* Dimensiune mare ca să se vadă buclele fontului */
+    font-weight: normal;
+    text-shadow: 0 0 25px rgba(80, 200, 120, 0.5); /* Glow-ul verde */
+    animation: fadeIn 2.5s ease-in-out; /* Intrarea elegantă */
 }
 
-/* Animația de intrare */
+/* Animația de apariție */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -50,11 +47,10 @@ body, html {
     }
 }
 
-/* Setări ca să arate blană și pe telefon */
+/* Optimizare ca să arate perfect și pe telefoane/tablete */
 @media (max-width: 768px) {
     .title {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
+        font-size: 4rem; /* Se micșorează textul ca să încapă pe ecrane mici */
         padding: 0 20px;
     }
 }
