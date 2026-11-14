@@ -5,65 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future View Event | GEMX</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Aducem un font modern și curat pentru textele mici -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Bara de navigare (Meniul de sus) -->
     <nav class="navbar">
         <div class="logo">FVE</div>
         <ul class="nav-links">
-            <li><a href="#despre">Despre Noi</a></li>
-            <li><a href="#program">Program</a></li>
+            <li><a href="#despre">Viziune</a></li>
+            <li><a href="#experienta">Experiență</a></li>
+            <li><a href="#program">Agenda</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Secțiunea Principală (Ce se vede prima dată) -->
     <header class="hero">
-        <div class="container">
+        <div class="hero-content">
             <h1 class="title">Future View Event</h1>
-            <p class="subtitle">Privește în viitorul ales de tine.</p>
-            
+            <p class="subtitle">Pregătește-te pentru următoarea generație. Experiența supremă GEMX.</p>
             <div class="event-info">
                 <span>📅 24 Noiembrie 2026</span>
-                <span>📍 Locație Secretă</span>
+                <span>📍 Serverul Onyx</span>
             </div>
-
-            <!-- Butonul care va duce spre serverul Onyx sau formular -->
-            <a href="#" class="cta-button">Rezervă-ți locul</a>
+            <!-- Pune link-ul tău de Discord în loc de # -->
+            <a href="#" target="_blank" class="cta-button">Rezervă-ți locul</a>
         </div>
     </header>
-<!-- Secțiunea Despre -->
-<section id="despre" class="content-section">
-    <h2>Despre Noi</h2>
-    <p>Redefinim standardele în organizarea evenimentelor
 
-Suntem o agenție de event planning dedicată excelenței. Misiunea noastră este să preluăm complexitatea organizării și să o transformăm într-o experiență impecabilă, perfect aliniată cu viziunea dumneavoastră.
+    <!-- Bara de statistici gen "Aisle Planner" -->
+    <section class="stats-section">
+        <div class="stat-item">
+            <h3>100+</h3>
+            <p>Membri Așteptați</p>
+        </div>
+        <div class="stat-item">
+            <h3>24h</h3>
+            <p>De Acces Exclusiv</p>
+        </div>
+        <div class="stat-item">
+            <h3>1</h3>
+            <p>Comunitate Unită</p>
+        </div>
+    </section>
 
-Inovația VR: Explorați evenimentul înainte de a se întâmpla
-Ceea ce ne distinge pe piață este serviciul nostru exclusiv de proiectare prin Realitate Virtuală (VR). Prin intermediul ochelarilor VR, pășiți în locație înainte ca evenimentul să aibă loc. Aveți control total pentru a ajusta decorul, așezarea la mese și iluminatul în timp real. Eliminăm orice incertitudine: ceea ce validați în mediul virtual este exact ceea ce vom implementa în realitate.
+    <!-- Secțiune Împărțită (Stânga Text / Dreapta Grafică) -->
+    <section id="despre" class="about-section">
+        <div class="about-text">
+            <h2>Viziunea Noastră</h2>
+            <p>Un eveniment nu înseamnă doar să ne strângem la un loc. Future View Event redefinește complet conceptul comunității noastre. Așa cum marile platforme profesionale organizează fiecare detaliu, noi aducem structura perfectă pentru gaming, strategii de viitor și networking direct pe serverul Onyx.</p>
+            <a href="#program" class="secondary-btn">Vezi Programul</a>
+        </div>
+        <div class="about-visual">
+            <div class="neon-box">
+                <span>GEMX ONYX</span>
+            </div>
+        </div>
+    </section>
 
-Angajamentul nostru
-Gestionăm integral logistica, de la coordonarea furnizorilor de top până la execuția tehnică, oferindu-vă un concept 100% personalizat. Vă garantăm libertatea de a vă bucura de calitatea de gazdă, fără niciun stres organizatoric.
+    <!-- Grila de Carduri (Servicii/Facilități) -->
+    <section id="experienta" class="features-section">
+        <h2 class="section-title">Ce Te Așteaptă</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Networking Premium</h3>
+                <p>Cunoaște membrii echipei și viitorii tăi parteneri de joc într-un mediu perfect organizat, direct pe voice.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Gaming Setup</h3>
+                <p>Turnee și meciuri organizate la nivel profesionist, cu structură clară și distracție pe măsură alături de Clau și restul găștii.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Acces Exclusiv</h3>
+                <p>Strategii și planuri de viitor pentru canal și comunitate, dezvăluite doar participanților de la eveniment.</p>
+            </div>
+        </div>
+    </section>
 
-Contactați-ne pentru a programa o primă sesiune de consultanță și pentru a păși în viitorul evenimentului dumneavoastră.</p>
-</section>
+    <!-- Lista curată cu programul -->
+    <section id="program" class="program-section">
+        <h2 class="section-title">Agenda Oficială</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">20:00</div>
+                <div class="desc">
+                    <h4>Accesul pe server & Check-in</h4>
+                    <p>Ne strângem toți pe voice, pregătim setările și spargem gheața.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">21:00</div>
+                <div class="desc">
+                    <h4>Startul Evenimentului</h4>
+                    <p>Prezentarea planurilor viitoare GEMX și deschiderea oficială.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">22:30</div>
+                <div class="desc">
+                    <h4>Sesiune de Gaming & Afterparty</h4>
+                    <p>Trecem la fapte. Meciuri custom, distracție fără limite și strategii live.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Secțiunea Program -->
-<section id="program" class="content-section">
-    <h2>Program</h2>
-    <p>Program relații clienți:
-Luni – Vineri: 09:00 – 16:00<br>
-        Sâmbătă: 10:00 - 14:00 (doar telefonic)<br><br>
-(Întâlnirile și sesiunile VR se realizează pe bază de programare prealabilă)
-</section>
+    <!-- Footer / Ultimul CTA -->
+    <footer id="contact" class="footer">
+        <h2>Fii parte din viitor.</h2>
+        <p>Orice întrebare ai, echipa Onyx îți stă la dispoziție non-stop.</p>
+        <!-- Pune link-ul tău de Discord în loc de # -->
+        <a href="#" target="_blank" class="cta-button">Contactează-ne pe Discord</a>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GEMX Hub. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
 
-<!-- Secțiunea Contact -->
-<section id="contact" class="content-section">
-    <h2>Contact</h2>
-    <p>Telefon: 0729284759 <br> Telefon: 0757220841 <br> Email: future.events04@gmail.com</p>
-</section>
 </body>
 </html>
