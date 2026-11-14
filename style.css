@@ -1,25 +1,32 @@
-/* Încărcarea noului font Allura */
+/* Încărcarea fontului elegant Allura */
 @font-face {
     font-family: 'Allura';
     src: url('Allura-Regular.otf');
 }
 
-/* Resetare generală */
+/* Variabile pentru culori */
+:root {
+    --bg-dark: #050505;
+    --emerald: #00FF9D;
+    --text-light: #ffffff;
+    --text-grey: #cccccc;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Scroll lin la apăsarea meniului */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
@@ -28,20 +35,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.95);
-    border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+    padding: 25px 50px;
+    background: rgba(5, 5, 5, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 157, 0.2);
 }
 .logo {
     font-family: 'Allura', cursive;
-    color: #00FF9D;
-    font-size: 3rem;
-    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+    color: var(--emerald);
+    font-size: 2.8rem;
 }
 .nav-links {
     list-style: none;
@@ -49,229 +55,237 @@ body {
     gap: 30px;
 }
 .nav-links a {
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: color 0.3s;
 }
 .nav-links a:hover {
-    color: #00FF9D;
+    color: var(--emerald);
 }
 
-/* ================= HERO SECTION ================= */
 /* ================= HERO SECTION ================= */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px 50px;
-    /* Aici punem imaginea ca fundal, cu o ușoară umbrire neagră peste ea ca să se citească textul clar */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images.jpg') center/cover no-repeat fixed;
+    padding: 0 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)), url('images_2.jpg') center/cover no-repeat fixed;
 }
-
-/* ================= STATS BAR ================= */
-.stats-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 20px;
-    background-color: #020a06;
-    border-top: 1px solid rgba(0,255,157,0.1);
-    border-bottom: 1px solid rgba(0,255,157,0.1);
+.hero-content {
+    max-width: 900px;
 }
-.stat-item h3 {
+.title {
     font-family: 'Allura', cursive;
-    color: #00FF9D;
-    font-size: 4rem;
+    color: var(--emerald);
+    font-size: 6.5rem;
     font-weight: normal;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+    animation: fadeIn 2s ease;
 }
-.stat-item p {
-    color: #aaa;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* ================= TITLURI COMUNE PENTRU SECȚIUNI ================= */
-.section-title {
-    font-family: 'Allura', cursive;
-    color: #00FF9D;
-    font-size: 5.5rem;
-    font-weight: normal;
-    margin-bottom: 50px;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
-}
-
-/* ================= DESPRE ================= */
-.about-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 10%;
-    gap: 50px;
-}
-.about-text {
-    flex: 1;
-}
-.about-text h2 {
-    font-family: 'Allura', cursive;
-    color: #00FF9D;
-    font-size: 5.5rem;
-    font-weight: normal;
-    margin-bottom: 20px;
-}
-.about-text p {
+.subtitle {
     font-size: 1.1rem;
-    line-height: 1.8;
-    color: #ccc;
-    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    text-transform: uppercase;
 }
-.secondary-btn {
-    color: #00FF9D;
+
+/* ================= BUTOANE ================= */
+.cta-button {
+    display: inline-block;
+    background-color: var(--emerald);
+    color: #000;
+    padding: 15px 40px;
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid #00FF9D;
-    padding-bottom: 5px;
-    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--emerald);
+    transition: all 0.3s ease;
 }
-.secondary-btn:hover {
-    color: #fff;
-    border-bottom: 1px solid #fff;
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--emerald);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
 }
-.about-visual {
+
+/* ================= SECȚIUNI (GENERAL) ================= */
+.about-section, .vr-section, .portfolio-section {
+    padding: 120px 10%;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.section-title {
+    font-family: 'Allura', cursive;
+    color: var(--emerald);
+    font-size: 4.5rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.lead-text {
+    font-size: 1.1rem;
+    color: var(--text-grey);
+    margin-bottom: 60px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================= DESPRE NOI ================= */
+.commitment-card {
+    background: rgba(0, 255, 157, 0.03);
+    border: 1px solid rgba(0, 255, 157, 0.15);
+    padding: 60px;
+    text-align: center;
+}
+.commitment-card h3 {
+    color: var(--emerald);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+.commitment-card p {
+    color: var(--text-grey);
+    line-height: 1.8;
+}
+
+/* ================= INOVAȚIA VR ================= */
+.vr-section {
+    background-color: #080808;
+    border-top: 1px solid rgba(0, 255, 157, 0.1);
+}
+.vr-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.vr-text {
+    flex: 1;
+}
+.vr-text .section-title {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.vr-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+.vr-text p {
+    color: var(--text-grey);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+.vr-text strong {
+    color: var(--emerald);
+    font-weight: 500;
+}
+.vr-image-wrapper {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-.neon-box {
-    width: 300px;
-    height: 400px;
-    border: 2px solid #00FF9D;
-    box-shadow: inset 0 0 20px rgba(0, 255, 157, 0.2), 0 0 20px rgba(0, 255, 157, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #00FF9D;
-    letter-spacing: 5px;
+.vr-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 157, 0.1);
 }
 
-/* ================= GRILĂ DE CARDURI ================= */
-.features-section {
-    padding: 100px 10%;
-    background-color: #020805;
+/* ================= PORTOFOLIU (GALERIE NOUĂ) ================= */
+.portfolio-section {
+    background-color: var(--bg-dark);
 }
-.features-grid {
+.portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-.feature-card {
-    background: #05120a;
-    padding: 40px 30px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 255, 157, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 255, 157, 0.15);
-    border-color: rgba(0, 255, 157, 0.5);
-}
-.feature-card h3 {
-    color: #fff;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-}
-.feature-card p {
-    color: #aaa;
-    line-height: 1.6;
-}
-
-/* ================= AGENDA (PROGRAM) ================= */
-.program-section {
-    padding: 100px 10%;
-}
-.timeline {
-    max-width: 800px;
-    margin: 0 auto;
+.portfolio-item {
     position: relative;
-    border-left: 2px solid rgba(0, 255, 157, 0.3);
-    padding-left: 30px;
+    overflow: hidden;
+    height: 350px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 157, 0.2);
+    cursor: pointer;
 }
-.timeline-item {
-    margin-bottom: 40px;
-    position: relative;
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
-.timeline-item::before {
-    content: '';
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Efectul de zoom la poze */
+}
+.portfolio-overlay {
     position: absolute;
-    left: -37px;
-    top: 0;
-    width: 12px;
-    height: 12px;
-    background: #00FF9D;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00FF9D;
-}
-.time {
-    color: #00FF9D;
+    bottom: -100%; /* Ascuns jos inițial */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,255,157,0.9));
+    color: #000;
     font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    transition: bottom 0.4s ease;
 }
-.desc h4 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-.desc p {
-    color: #aaa;
-    line-height: 1.6;
+.portfolio-item:hover .portfolio-overlay {
+    bottom: 0; /* Apare textul cu verde peste poză */
 }
 
-/* ================= FOOTER & CONTACT ================= */
+/* ================= FOOTER ================= */
 .footer {
     text-align: center;
-    padding: 100px 20px 30px;
-    background: #020a06;
+    padding: 100px 20px 40px;
+    background: #020202;
     border-top: 1px solid rgba(0, 255, 157, 0.1);
 }
-.footer h2 {
+.footer-title {
     font-family: 'Allura', cursive;
-    color: #00FF9D;
-    font-size: 5.5rem;
+    color: var(--emerald);
+    font-size: 4rem;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .footer p {
-    color: #ccc;
+    color: var(--text-grey);
     margin-bottom: 40px;
-    font-size: 1.1rem;
 }
 .footer-bottom {
     margin-top: 80px;
-    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #666;
-    font-size: 0.9rem;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #444;
 }
 
 /* ================= REGLAJE ECRANE MICI ================= */
 @media (max-width: 900px) {
-    .about-section { flex-direction: column; text-align: center; }
-    .title { font-size: 5rem; }
-    .stat-item h3 { font-size: 3rem; }
-    .stats-section { flex-direction: column; gap: 40px; text-align: center; }
     .nav-links { display: none; }
-    .navbar { justify-content: center; }
+    .vr-container { flex-direction: column; text-align: center; }
+    .vr-text .section-title { text-align: center; }
+    .title { font-size: 4.5rem; }
+    .section-title { font-size: 3.5rem; }
+    .commitment-card { padding: 30px; }
 }
 
 @keyframes fadeIn {
