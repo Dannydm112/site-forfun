@@ -174,34 +174,10 @@ body {
 }
 
 /* ================= INOVAȚIA VR ================= */
-.vr-section {
-    background-color: var(--bg-cream-alt);
-    border-top: 2px solid var(--emerald);
-    border-bottom: 2px solid var(--emerald);
+.vr-text strong {
+    color: var(--emerald); /* Păstrează doar nuanța elegantă de smarald */
+    font-weight: 500; /* Îl face normal/subtil, fără să fie butucănos */
 }
-.vr-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-.vr-text {
-    flex: 1;
-}
-.vr-text .section-title {
-    text-align: left;
-    margin-bottom: 10px;
-}
-.vr-text h3 {
-    font-size: 1.3rem;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-dark);
-}
-.vr-text p {
-    color: var(--text-grey);
-    margin-bottom: 20px;
-    font-weight: 500;
 }
 /* Subliniem puțin textul important ca să se vadă verdele pe crem */
 .vr-text strong {
