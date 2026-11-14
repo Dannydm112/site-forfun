@@ -1,7 +1,6 @@
-/* Încărcarea fontului tău custom */
 @font-face {
-    font-family: 'Priestacy';
-    src: url('Priestacy.otf');
+    font-family: 'Priestacy'; /* Lăsăm intenționat eticheta veche aici */
+    src: url('Allura-Regular.otf'); /* Dar site-ul va trage designul din fontul tău nou */
 }
 
 /* Resetare generală */
