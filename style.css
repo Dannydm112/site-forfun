@@ -150,3 +150,35 @@ body, html {
     .nav-links { display: none; } /* Ascundem meniul lung pe mobil momentan */
     .navbar { justify-content: center; }
 }
+/* Comanda pentru alunecare fină când dai click pe meniu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Designul pentru noile secțiuni */
+.content-section {
+    min-height: 100vh; /* Fiecare secțiune e cât un ecran întreg */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    border-top: 1px solid rgba(0, 255, 157, 0.1);
+}
+
+.content-section h2 {
+    font-family: 'Priestacy', cursive;
+    color: #00FF9D;
+    font-size: 5rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+}
+
+.content-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #cccccc;
+    max-width: 600px;
+}
