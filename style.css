@@ -27,11 +27,11 @@ body, html {
 
 /* Magia textului: verde smarald, font custom și strălucire */
 .title {
-    color: #50C878; 
+    color: #00A86B;
     font-family: 'Priestacy', cursive; 
     font-size: 8rem; 
     font-weight: normal;
-    text-shadow: 0 0 25px rgba(80, 200, 120, 0.5); 
+    text-shadow: 0 0 25px rgba(0, 168, 107, 0.6);
     animation: fadeIn 2.5s ease-in-out; 
     /* Aici adaugi spațiul ca să nu se mai taie literele: */
     padding: 0 50px; 
