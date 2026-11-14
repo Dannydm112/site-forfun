@@ -1,6 +1,7 @@
+/* Încărcarea noului font Allura */
 @font-face {
-    font-family: 'Priestacy'; /* Lăsăm intenționat eticheta veche aici */
-    src: url('Allura-Regular.otf'); /* Dar site-ul va trage designul din fontul tău nou */
+    font-family: 'Allura';
+    src: url('Allura-Regular.otf');
 }
 
 /* Resetare generală */
@@ -37,9 +38,9 @@ body {
     backdrop-filter: blur(10px);
 }
 .logo {
-    font-family: 'Priestacy', cursive;
+    font-family: 'Allura', cursive;
     color: #00FF9D;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
 }
 .nav-links {
@@ -68,7 +69,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 120px 20px 50px;
-    /* Un gradient subtil ca să dea adâncime ecranului negru */
     background: radial-gradient(circle at center, #041a10 0%, #000000 60%);
 }
 .hero-content {
@@ -76,12 +76,12 @@ body {
 }
 .title {
     color: #00FF9D;
-    font-family: 'Priestacy', cursive;
+    font-family: 'Allura', cursive;
     text-transform: capitalize;
     font-size: 8rem;
     font-weight: normal;
     text-shadow: 0 0 25px rgba(0, 255, 157, 0.6);
-    padding: 0 50px; /* Ca să nu se taie fontul */
+    padding: 0 50px; 
     margin-bottom: 20px;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -137,7 +137,7 @@ body {
     border-bottom: 1px solid rgba(0,255,157,0.1);
 }
 .stat-item h3 {
-    font-family: 'Priestacy', cursive;
+    font-family: 'Allura', cursive;
     color: #00FF9D;
     font-size: 4rem;
     font-weight: normal;
@@ -151,16 +151,16 @@ body {
 
 /* ================= TITLURI COMUNE PENTRU SECȚIUNI ================= */
 .section-title {
-    font-family: 'Priestacy', cursive;
+    font-family: 'Allura', cursive;
     color: #00FF9D;
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: normal;
     margin-bottom: 50px;
     text-align: center;
     text-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
 }
 
-/* ================= DESPRE (Structură 50-50 ca la Aisle Planner) ================= */
+/* ================= DESPRE ================= */
 .about-section {
     display: flex;
     align-items: center;
@@ -172,9 +172,9 @@ body {
     flex: 1;
 }
 .about-text h2 {
-    font-family: 'Priestacy', cursive;
+    font-family: 'Allura', cursive;
     color: #00FF9D;
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: normal;
     margin-bottom: 20px;
 }
@@ -235,7 +235,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .feature-card:hover {
-    transform: translateY(-10px); /* Cardul se ridică la hover */
+    transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 255, 157, 0.15);
     border-color: rgba(0, 255, 157, 0.5);
 }
@@ -298,9 +298,9 @@ body {
     border-top: 1px solid rgba(0, 255, 157, 0.1);
 }
 .footer h2 {
-    font-family: 'Priestacy', cursive;
+    font-family: 'Allura', cursive;
     color: #00FF9D;
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: normal;
     margin-bottom: 20px;
 }
@@ -317,18 +317,17 @@ body {
     font-size: 0.9rem;
 }
 
-/* ================= REGLAJE PENTRU ECRANE MICI (TABLETE/TELEFOANE) ================= */
+/* ================= REGLAJE ECRANE MICI ================= */
 @media (max-width: 900px) {
     .about-section { flex-direction: column; text-align: center; }
-    .title { font-size: 4.5rem; }
+    .title { font-size: 5rem; }
     .stat-item h3 { font-size: 3rem; }
     .stats-section { flex-direction: column; gap: 40px; text-align: center; }
-    .nav-links { display: none; } /* Ascundem meniul lung pe mobil */
+    .nav-links { display: none; }
     .navbar { justify-content: center; }
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
 }
