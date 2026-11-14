@@ -204,9 +204,6 @@ body {
     font-weight: 500;
 }
 /* Subliniem puțin textul important ca să se vadă verdele pe crem */
-.vr-text strong {
-    color: var(--emerald); /* Păstrează doar nuanța elegantă de smarald */
-    font-weight: 500; /* Îl face normal/subtil, fără să fie butucănos */
 }
 
 /* ================= PORTOFOLIU ================= */
