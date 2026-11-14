@@ -1,58 +1,152 @@
-/* Încărcăm fontul tău premium descărcat */
+/* Încărcăm fontul tău premium descărcat pentru titluri */
 @font-face {
     font-family: 'Priestacy';
     src: url('Priestacy.otf');
 }
 
-/* Resetăm marginile ca să fie curat */
+/* Reset general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundalul negru pur și așezarea perfectă pe centru */
+/* Setări de bază (Fundal negru) */
 body, html {
-    height: 100%;
-    background-color: #000000; /* Negru curat */
+    background-color: #000000;
+    color: #ffffff; /* Textele normale vor fi albe */
+    font-family: 'Montserrat', sans-serif; /* Font curat pentru texte mici */
+    overflow-x: hidden;
+}
+
+/* ================= BARA DE NAVIGARE ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid rgba(0, 255, 157, 0.3); /* O linie fină de smarald jos */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Priestacy', cursive;
+    color: #00FF9D;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00FF9D; /* Se fac verzi la hover */
+}
+
+/* ================= SECȚIUNEA PRINCIPALĂ (HERO) ================= */
+.hero {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-}
-
-.container {
     text-align: center;
+    padding-top: 80px; /* Să nu se bage sub meniul de sus */
 }
 
-/* Magia textului: verde smarald, font custom și strălucire */
+/* Titlul Tău Elegant */
 .title {
-    color: #00A86B;
-    font-family: 'Priestacy', cursive; 
-    font-size: 8rem; 
+    color: #00FF9D;
+    font-family: 'Priestacy', cursive;
+    text-transform: capitalize;
+    font-size: 8rem;
     font-weight: normal;
-    text-shadow: 0 0 25px rgba(0, 168, 107, 0.6);
-    animation: fadeIn 2.5s ease-in-out; 
-    /* Aici adaugi spațiul ca să nu se mai taie literele: */
-    padding: 0 50px; 
+    text-shadow: 0 0 25px rgba(0, 255, 157, 0.6);
+    padding: 0 50px; /* Ca să nu taie literele */
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 10px;
 }
 
-/* Animația de apariție */
+/* Subtitlul */
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #cccccc;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Detalii (Dată și Locație) */
+.event-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.event-info span {
+    background: rgba(0, 255, 157, 0.1);
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    color: #00FF9D;
+}
+
+/* Butonul C.T.A. */
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    color: #00FF9D;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 15px 40px;
+    border: 2px solid #00FF9D;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Efect când pui mouse-ul pe buton */
+.cta-button:hover {
+    background-color: #00FF9D;
+    color: #000000;
+    box-shadow: 0 0 30px rgba(0, 255, 157, 0.8);
+}
+
+/* Animația de intrare (Fade In) */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Optimizare ca să arate perfect și pe telefoane/tablete */
+/* ================= SETĂRI PENTRU TELEFON/TABLETĂ ================= */
 @media (max-width: 768px) {
-    .title {
-        font-size: 4rem; /* Se micșorează textul ca să încapă pe ecrane mici */
-        padding: 0 20px;
-    }
+    .title { font-size: 4.5rem; padding: 0 20px; }
+    .subtitle { font-size: 1rem; padding: 0 20px; }
+    .event-info { flex-direction: column; gap: 15px; }
+    .nav-links { display: none; } /* Ascundem meniul lung pe mobil momentan */
+    .navbar { justify-content: center; }
 }
