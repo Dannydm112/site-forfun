@@ -270,29 +270,72 @@ body {
 }
 
 /* ================= FOOTER ================= */
+/* ================= FOOTER ================= */
 .footer {
-    text-align: center;
-    padding: 100px 20px 40px;
-    background: #111111; /* Footerul îl lăsăm negru ca să „închidă” frumos site-ul */
-    color: #ffffff;
+padding: 80px 10% 40px;
+background: #111111;
+color: #ffffff;
+font-size: 0.95rem;
 }
-.footer-title {
-    font-family: 'Allura', cursive;
-    color: var(--emerald);
-    font-size: 4rem;
-    font-weight: normal;
-    margin-bottom: 15px;
+.footer-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 40px;
+margin-bottom: 60px;
+text-align: left;
 }
-.footer p {
-    color: #aaaaaa;
-    margin-bottom: 40px;
+.footer-logo {
+font-family: 'Allura', cursive;
+color: var(--emerald);
+font-size: 3.5rem;
+font-weight: normal;
+margin-bottom: 20px;
+}
+.footer-col h3 {
+color: var(--emerald);
+font-size: 1.2rem;
+margin-bottom: 25px;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+}
+.footer-col p {
+color: #aaaaaa;
+line-height: 1.8;
+margin-bottom: 15px;
+}
+.footer-col ul {
+list-style: none;
+}
+.footer-col ul li {
+margin-bottom: 15px;
+}
+.footer-col ul li a {
+color: #aaaaaa;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.footer-col ul li a:hover {
+color: var(--emerald);
+}
+.contact-info p {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+}
+.contact-info a {
+color: #aaaaaa;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.contact-info a:hover {
+color: var(--emerald);
 }
 .footer-bottom {
-    margin-top: 80px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: #666;
+text-align: center;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+padding-top: 20px;
+font-size: 0.85rem;
+color: #666;
 }
 
 /* ================= REGLAJE ECRANE MICI ================= */
