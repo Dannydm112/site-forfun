@@ -32,12 +32,13 @@ body {
 }
 
 /* ================= NAVBAR (Acum crem cu text negru) ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
-    background: rgba(250, 248, 245, 0.95);
+    padding: 10px 50px; /* Am micșorat padding-ul ca bara să fie subțire și finuță */
+    background: rgba(250, 248, 245, 0.98);
     position: fixed;
     width: 100%;
     top: 0;
@@ -52,19 +53,25 @@ body {
     text-decoration: none;
 }
 .logo-img {
-    height: 60px; /* Ajustează înălțimea logo-ului de sus */
+    height: 90px; /* L-am făcut destul de mare ca să se citească clar */
     width: auto;
-    mix-blend-mode: multiply; /* MAGIA: face fundalul alb invizibil pe cremul din navbar */
+    mix-blend-mode: multiply; /* Scoate fundalul alb al logo-ului */
     transition: transform 0.3s ease;
 }
 .logo-img:hover {
     transform: scale(1.05);
 }
-}
 .nav-links {
-    list-style: none;
-    display: flex;
+    list-style: none !important; /* Elimină punctulețele */
+    display: flex !important; /* Forțează meniul să stea pe orizontală */
+    flex-direction: row;
     gap: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+.nav-links li {
+    display: inline-block;
 }
 .nav-links a {
     color: var(--text-dark);
