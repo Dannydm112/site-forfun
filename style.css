@@ -30,7 +30,16 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
 
+a, button, .cta-button, .portfolio-item, .social-links a {
+    cursor: pointer;
+}
 /* ================= NAVBAR (Acum crem cu text negru) ================= */
 /* ================= NAVBAR ================= */
 .navbar {
